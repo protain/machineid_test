@@ -1,0 +1,15 @@
+[package]
+name = "clilic_svr"
+version = "0.1.0"
+authors = ["Ryuta Hayashi <ryuta.hayashi@fujifilm.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+windows = "0.10"
+
+[dependencies.winapi]
+version = "0.3"
+features = ["winuser", "winioctl", "fileapi", "ioapiset", "handleapi", "sysinfoapi"]

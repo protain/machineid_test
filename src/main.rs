@@ -213,10 +213,17 @@ fn get_biosuuid() -> Result<String> {
     }
 }
 
-fn main() -> anyhow::Result<()> {
+fn try_main() -> anyhow::Result<()> {
     let serino = get_drive_serialno().unwrap_or("UNKNOWN-SERINO".into());
     let biosid = get_biosuuid().unwrap_or("UNKNOWN-BIOSID".into());
     print!("Hello, world!, serino: {}, biosid: {}", serino, biosid);
 
     Ok(())
+}
+
+pub fn main() {
+    match try_main() {
+        Ok(_) => println!("OKOK"),
+        Err(_) => println!("NGNG"),
+    }
 }
